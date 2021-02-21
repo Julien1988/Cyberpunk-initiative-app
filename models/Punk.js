@@ -12,7 +12,12 @@ const PunkSchema = new mongoose.Schema({
     },
     is_player: {
         type: Boolean,
+    },
+    user_id: {
+        type: String
     }
+
 })
 
-module.exports = mongoose.models.Punk || mongoose.model('Punk', PunkSchema);
+
+export default mongoose.models.Punk || mongoose.model('Punk', PunkSchema)
