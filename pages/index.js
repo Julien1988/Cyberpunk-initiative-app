@@ -1,21 +1,20 @@
-import Head from 'next/head'
-import styles from '../styles/Home.module.css'
 
-export default function Home() {
+
+
+function Home() {
+  
+
   return (
-    <div className={styles.container}>
-      <Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-
-      <main className={styles.main}>
-      <h1>My App</h1>
-      </main>
-
-      <footer className={styles.footer}>
-       
-      </footer>
+    <div>
+      <h1>Cyberpunk RED Init App</h1>
+      <a href="/api/auth/login">Login</a>
+      <a href="/api/auth/logout">Logout</a>
+      <a href="/profile">Profile</a>
     </div>
+     
+      
+  
   )
 }
+
+export default Home
