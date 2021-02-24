@@ -3,7 +3,7 @@ import Punk from '../../../../models/Punk'
 
 export default async function handler(req, res) {
   const {
-    query: { id },
+    query: { userId },
     method,
   } = req
 
@@ -12,7 +12,7 @@ export default async function handler(req, res) {
   switch (method) {
     case 'GET' /* Get a model by its ID */:
       try {
-        const punk = await Punk.find({user_id: id})
+        const punk = await Punk.find({user_id: userId})
         if (!punk) {
           return res.status(400).json({ success: false })
         }
