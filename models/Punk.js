@@ -14,7 +14,8 @@ const PunkSchema = new mongoose.Schema({
         type: Boolean,
     },
     user_id: {
-        type: String
+        type: String,
+        require: [true, 'Please connect to your account'],
     }
 
 })
