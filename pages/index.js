@@ -1,15 +1,27 @@
-
-
+import React from 'react';
 
 function Home() {
-  
-
   return (
     <div>
+    
       <h1>Cyberpunk RED Init App</h1>
-      <a href="/api/auth/login">Login</a>
-      <a href="/api/auth/logout">Logout</a>
-      <a href="/profile">Profile</a>
+      <nav>
+        <ul>
+          <li>
+            <a href="/api/auth/login">Login</a>
+          
+          </li>
+          <li>
+          <a href="/api/auth/logout">Logout</a>
+          </li>
+          <li>
+          <a href="/profile">Profile</a>
+          </li>
+        </ul>
+      </nav>
+      
+    
+     
     </div>
      
       
