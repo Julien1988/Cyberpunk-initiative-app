@@ -1,10 +1,28 @@
 import React from 'react';
-import Layout from '../components/Layout'
-function Home() {
+import Link from 'next/link';
+import fetch from 'isomorphic-unfetch';
+import { Button, Card } from 'semantic-ui-react';
+function Home({punks}) {
   return (
-    <div>
-    
-      <h1>Cyberpunk RED Init App</h1>
+    <div className="punks-container">
+      <h1>Punks</h1>
+      <div className="grid wrapper">
+        {punks.map(punk => {
+          return (
+            <div key={punk._id}>
+              <Card>
+                <Card.Content>
+                  <Card.Header>
+                    <Link href={`/${punk._id}`}>
+                      <a>{ punk.name }</a>
+                    </Link>
+                  </Card.Header>
+                </Card.Content>
+              </Card>
+            </div>
+          )
+        })}
+      </div>
      
     </div>
      
@@ -12,5 +30,11 @@ function Home() {
   
   )
 }
+Home.getInitialProps = async () => {
+  const res = await fetch('http://localhost:3000/api/punks');
+  const { data } = await res.json();
 
-export default Home
+  return {punks: data} 
+}
+
+export default Home;
