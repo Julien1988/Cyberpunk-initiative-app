@@ -21,13 +21,9 @@ function Home({ punks }) {
       <h1>Punks</h1>
         <h2> Hello {user.name}</h2>
         <h2> Id : {user.sub}</h2>
-       
-        <Link href={`/game`}>
-          <a>See my game</a>
-        </Link>
-         
+
         <Link href={user.sub}>
-          <a>See my test</a>
+          <a>See my game</a>
         </Link>
       
       </div>
