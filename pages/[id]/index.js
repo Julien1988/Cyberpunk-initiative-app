@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Link from 'next/link';
 import fetch from 'isomorphic-unfetch';
 import { Button, Card } from 'semantic-ui-react';
@@ -8,20 +8,32 @@ import { useUser } from '@auth0/nextjs-auth0';
 
 function Game({ punks }) {
   const { user, error, isLoading } = useUser();
+  // if
   if (isLoading) return <div>Loading...</div>;
   if(!user) return <div><h1>You need to be connected</h1></div>
   if (error) return <div>{error.message}</div>;
-  // const numbers = [1, 2, 3, 4, 5];
-  // const doubled = numbers.map((number) => number * 2);
-  // const punksTest = punks
-  // console.log(punksTest)
+  // end if
+
+  const getPunksArray = punks
+  const filterPunkArray = []
+
+  console.log(getPunksArray, filterPunkArray)
+  
+  for (let i = 0; i < 100; i++) {
+    const result = getPunksArray.filter(punk => punk.initiative === i);
+    if (result.length > 0) {
+      filterPunkArray.push(result[0]) 
+    }
+
+  }
+
 
 
   return (
     user && (
     <div className="punks-container">
       <div className="grid wrapper">
-        {punks.map(punk => {
+        {filterPunkArray.map(punk => {
           return (
             <div key={punk._id}>
               <Card>
