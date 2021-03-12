@@ -11,6 +11,10 @@ function Game({ punks }) {
   if (isLoading) return <div>Loading...</div>;
   if(!user) return <div><h1>You need to be connected</h1></div>
   if (error) return <div>{error.message}</div>;
+  // const numbers = [1, 2, 3, 4, 5];
+  // const doubled = numbers.map((number) => number * 2);
+  // const punksTest = punks
+  // console.log(punksTest)
 
 
   return (
@@ -20,7 +24,6 @@ function Game({ punks }) {
         {punks.map(punk => {
           return (
             <div key={punk._id}>
-              
               <Card>
                 <Card.Content>
                   <Card.Header>
@@ -36,7 +39,8 @@ function Game({ punks }) {
             </div>
           )
         })}
-      </div>
+        </div>
+      
       </div>
     )
   )
