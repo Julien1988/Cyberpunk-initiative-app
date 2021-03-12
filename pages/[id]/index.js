@@ -24,9 +24,12 @@ function Game({ punks }) {
               <Card>
                 <Card.Content>
                   <Card.Header>
-                    <Link href={`/api/punks/${punk._id}`}>
-                      <a>{ punk.name }</a>
-                    </Link>
+                    <h2>{punk.name}</h2>
+                    <h3>{punk.initiative}</h3>
+                    {punk.is_player
+                      ? <h4> PJ </h4>
+                      : <h4> PNJ </h4>
+                    }
                   </Card.Header>
                 </Card.Content>
               </Card>
