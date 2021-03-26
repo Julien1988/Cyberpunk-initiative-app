@@ -26,9 +26,6 @@ function Game({ punks }) {
     }
 
   }
-
-
-
   return (
     user && (
     <div className="punks-container">
@@ -46,6 +43,14 @@ function Game({ punks }) {
                       : <h4> PNJ </h4>
                     }
                   </Card.Header>
+                </Card.Content>
+                <Card.Content>
+                  <Link href={`/${punk._id}/edit`}>
+                    <Button>Edit</Button>
+                  </Link>
+                  <Link href={`/${punk._id}/delete`}>
+                    <Button>Delete</Button>
+                  </Link>
                 </Card.Content>
               </Card>
             </div>

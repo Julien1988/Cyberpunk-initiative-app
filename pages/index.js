@@ -1,11 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
-import fetch from 'isomorphic-unfetch';
-import { Button, Card } from 'semantic-ui-react';
 import { useUser } from '@auth0/nextjs-auth0';
-import {
 
-} from '@auth0/nextjs-auth0';
 
 
 function Home({ punks }) {
